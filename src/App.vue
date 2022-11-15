@@ -1,11 +1,11 @@
-<script setup></script>
+<script setup>
+import LandingLayoutVue from "./layout/LandingLayout.vue";
+</script>
 
 <template>
   <header>
-    <h1>Hello</h1>
+    <LandingLayoutVue />
   </header>
 
-  <main>
-
-  </main>
+  <main></main>
 </template>

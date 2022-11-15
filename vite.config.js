@@ -10,5 +10,12 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  css: {
+      loaderOptions:{
+        sass: {
+          data: '@import "@/css/_shared.scss"'
+        }
+      }
   }
 })
