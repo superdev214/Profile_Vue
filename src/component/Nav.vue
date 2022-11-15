@@ -19,9 +19,9 @@ const nav_item = ref(
       Home
     </router-link>
     <router-link to="/About" class="ml-[30px] cursor-pointer" :class="nav_item"> About </router-link>
-    <router-link to="/" class="ml-[30px] cursor-pointer" :class="nav_item"> Resume </router-link>
-    <router-link to="/" class="ml-[30px] cursor-pointer" :class="nav_item"> Services </router-link>
-    <router-link to="/" class="ml-[30px] cursor-pointer" :class="nav_item"> Portfolio </router-link>
-    <router-link to="/" class="ml-[30px] cursor-pointer" :class="nav_item"> Contact </router-link>
+    <router-link to="/Resume" class="ml-[30px] cursor-pointer" :class="nav_item"> Resume </router-link>
+    <router-link to="/Services" class="ml-[30px] cursor-pointer" :class="nav_item"> Services </router-link>
+    <router-link to="/Portfolio" class="ml-[30px] cursor-pointer" :class="nav_item"> Portfolio </router-link>
+    <router-link to="/Contact" class="ml-[30px] cursor-pointer" :class="nav_item"> Contact </router-link>
   </nav>
 </template>

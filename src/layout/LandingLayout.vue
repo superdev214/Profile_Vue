@@ -11,6 +11,6 @@ import HomeVue from "../pages/Home.vue";
       'background-image': 'url(background.jpg)',
     }">
 
-    <HomeVue />
+    <slot />
   </div>
 </template>
