@@ -1,8 +1,6 @@
 <script>
-export default{
-
-}
+export default {};
 </script>
 <template>
-    <h1 class="text-red-500 text-[50px]">Resume</h1>
+  <div class="h-screen"><h1 class="text-red-500 text-[50px]">Resume</h1></div>
 </template>
