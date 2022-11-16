@@ -1,61 +1,61 @@
 <template>
-  <div>
-    <k-progress :percent="10"></k-progress>
-    <k-progress :percent="20" status="success"></k-progress>
-    <k-progress :percent="30" status="warning" :border="false"></k-progress>
-    <k-progress :percent="40" status="error"></k-progress>
-    <k-progress :percent="50" color="#9254de"></k-progress>
-    <k-progress
-      :percent="60"
-      :color="['#f5af19', '#f12711', '#9254de', '#40a9ff', '#5cdbd3']"
-      :border="false"
-    ></k-progress>
-    <k-progress
-      :percent="70"
-      :color="['#40a9ff', '#5cdbd3']"
-      bg-color="#d9f7be"
-    ></k-progress>
-    <k-progress :percent="percent" :color="getColor"></k-progress>
+  <div class="rounded-[50px]">
+    <span class="text-white">{{ `${title}%` }}:</span>
+    <span class="float-right text-white"> {{ `${this.startVal}%` }} </span>
+    <div class="w-100% p-0 bg-white m-0">
+      <div :style="fillerStyles" class="h-[16px] m-[1px]"></div>
+    </div>
   </div>
 </template>
 
 <script>
-import KProgress from 'k-progress';
 
+import { reactive, ref } from "vue";
+import { onMounted, getCurrentInstance } from "vue";
+import { computed } from "vue";
 export default {
-  data() {
+  name: "ProgressBar",
+  props: {
+    bgcolor: String,
+
+    title: String,
+    target: Number,
+  },
+  mounted() {
+    setInterval(() => {
+
+       if(this.startVal < this.target)
+            {
+                this.startVal += 5;
+            }
+    }, 100);
+  },
+  data(){
     return{
-      percent: 10,
-      ifUp: true,
+        startVal : 0,
     }
   },
-  components(){
-    // KProgresss : k-progress,
-  },
-  mounted () {
-    const timer = setInterval(() =>{
-      if (this.ifUp) {
-        this.percent = this.percent + 10
-        this.percent == 100 ? this.ifUp = false : this.ifUp = true
-      } else {
-        this.percent = this.percent - 10
-        this.percent == 10 ? this.ifUp = true : this.ifUp = false
-      }
-    }, 1000);
-    this.$once('hook:beforeDestroy', () => clearInterval(timer));
-  },
-  methods: {
-    getColor(percent) {
-      if(percent < 40){
-        return '#ffc069';
-      } else if(percent < 60) {
-        return '#fadb14';
-      } else if(percent < 80) {
-        return '#13c2c2';
-      } else {
-        return '#389e0d';
-      }
+  methods(){
+    function progressStep(){
+        if(this.startVal < props.target)
+            this.startVal += 5;
+        return this.startVal;
     }
   },
-}
+  setup(props) {
+    const fillerStyles = computed(() => {
+
+      return {
+
+          width: `${getCurrentInstance().data.startVal}%`,
+        backgroundColor: props.bgcolor,
+        transition: "width 1s ease-in-out",
+        borderRadius: "inherit",
+        //   textAlign: "right",
+      };
+    });
+
+    return { fillerStyles };
+  },
+};
 </script>

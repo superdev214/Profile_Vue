@@ -1,5 +1,8 @@
 <script>
-export default {};
+import { ref } from "vue";
+export default {
+
+};
 </script>
 <script setup>
 import CounterVue from "../component/Counter.vue";
@@ -170,5 +173,35 @@ import SkillVue from "../component/Skill.vue";
     </div>
   </div>
   <!-- CounterVue -->
-<!-- <SkillVue/> -->
+  <h2 class="text-[14px] font-medium text-[#aaaaaa] tracking-[2px] after:content-[''] after:w-[120px] after:h-[1px] after:inline-block after:bg-green-600 after:ml-[4px] after:m-[2px] m-[20px] ml-0">
+          SKILLS
+        </h2>
+        <div class="grid grid-cols-12">
+          <div class="col-span-6 p-[12px]">
+
+            <SkillVue  :target="100" :title="'REACT JS'" :bgcolor="'#18d26e'" />
+            <SkillVue  :target="100" :title="'VUE JS'"   :bgcolor="'#18d26e'" />
+            <SkillVue  :target="95" :title="'ANGULAR'"  :bgcolor="'#18d26e'"/>
+            <SkillVue  :target="100" :title="'NODE JS'" :bgcolor="'#18d26e'" />
+            <SkillVue  :target="100" :title="'PHP'"     :bgcolor="'#18d26e'"/>
+            <SkillVue  :target="100" :title="'lARAVEL'"  :bgcolor="'#18d26e'"/>
+            <SkillVue  :target="90" :title="'GOLANG'"  :bgcolor="'#18d26e'"/>
+            <SkillVue  :target="90" :title="'AWS'"  :bgcolor="'#18d26e'"/>
+            <SkillVue  :target="100" :title="'FIGMA'"  :bgcolor="'#18d26e'"/>
+          </div>
+          <div class="col-span-6 p-[12px]">
+   
+            <SkillVue :target="100" :title="'REACT NATIVE'"  :bgcolor="'#18d26e'"/>
+            <SkillVue :target="80"  :title="'JAVA/KOTLIN'"  :bgcolor="'#18d26e'"/>
+            <SkillVue :target="80"  :title="'SWIFT'" :bgcolor="'#18d26e'"/>
+            <SkillVue :target="80"  :title="'C#'"  :bgcolor="'#18d26e'"/>
+            <SkillVue :target="80"  :title="'QT'"  :bgcolor="'#18d26e'"/>
+            <SkillVue :target="100" :title="'MONGODB'"  :bgcolor="'#18d26e'"/>
+            <SkillVue :target="90"  :title="'MYSQL'"  :bgcolor="'#18d26e'"/>
+            <SkillVue :target="90"  :title="'DOCKER'"  :bgcolor="'#18d26e'"/>
+            <SkillVue :target="100" :title="'ADOBE XD'"  :bgcolor="'#18d26e'"/>
+          </div>
+        </div>
+
+      <!-- <SkillVue  :bgcolor="'#18d26e'" :completed="completed" :title="'REACT JS'"/> -->
 </template>
